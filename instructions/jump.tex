@@ -1,0 +1,15 @@
+\instruction{Jump}
+
+\wordDSI{ADDRESS}{-}{0 0 0}{1 1 1 0 0}
+
+\format
+jump(ADDRESS)
+
+\purpose
+
+To begin execution of or jump within a program stored to internal memory.
+
+\description
+
+If the fetch unit is not in [read from memory] mode, it exits [read from communication] mode and enters [read from memory] mode.
+The program counter is then updated so the next instruction is the one at address ADDRESS.

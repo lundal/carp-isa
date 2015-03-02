@@ -1,0 +1,18 @@
+\instruction{Reset Counter}
+
+\wordDSI{-}{COUNTER}{0 0 0}{1 1 1 1 1}
+
+\format
+counter\_reset(COUNTER)
+
+\purpose
+
+To reset a counter.
+
+\description
+
+Counter COUNTER is set to 0.
+
+\notes
+
+Accessing counter [counter amount] or higher yields undefined behavior.

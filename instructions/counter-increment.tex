@@ -1,0 +1,19 @@
+\instruction{Increment Counter}
+
+\wordDSI{-}{COUNTER}{0 0 0}{1 1 1 1 0}
+
+\format
+counter\_increment(COUNTER)
+
+\purpose
+
+To increment a counter.
+
+\description
+
+Counter COUNTER is incremented by 1.
+If counter COUNTER is at maximum, it instead becomes 0.
+
+\notes
+
+Accessing counter [counter amount] or higher yields undefined behavior.

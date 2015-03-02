@@ -1,0 +1,19 @@
+\instruction{Store}
+
+\wordDSI{ADDRESS}{-}{0 0 0}{1 1 0 1 0}
+
+\format
+store(ADDRESS)
+
+\purpose
+
+To begin storage of a program to internal memory.
+
+\description
+
+The fetch unit exits [read from communication] mode and enters [save to memory] mode.
+The next instruction will be saved at address ADDRESS, and then each address thereafter.
+
+\notes
+
+This will be saved as a nop if the fetch unit is already in [save to memory] mode.

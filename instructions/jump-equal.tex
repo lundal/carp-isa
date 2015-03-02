@@ -1,0 +1,22 @@
+\instruction{Jump Equal}
+
+\wordDSI{ADDRESS}{COUNTER}{0 0 1}{1 1 1 0 1}
+\wordQ{VALUE}
+
+\format
+jump\_equal(ADDRESS, COUNTER, VALUE)
+
+\purpose
+
+To begin execution of or jump within a program stored to internal memory if a counter matches a value.
+
+\description
+
+If counter COUNTER is equal to VALUE, this instructions is exactly like jump(ADDRESS).
+Otherwise, it is discarded.
+
+\notes
+
+Accessing counter [counter amount] or higher yields undefined behavior.
+
+A value that is longer than [counter bits] yields undefined behavior.
