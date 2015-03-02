@@ -25,4 +25,6 @@ read\_rule\_vectors(1) will put the following words into the send buffer.
 
 \notes
 
-This instruction takes N cycles.
+This instruction takes [words per rule vector] * N cycles.
+
+When there are no rule vectors available and less than N have been sent, this instruction waits.
