@@ -1,0 +1,62 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc} % UTF-8
+\usepackage[T1]{fontenc} % 8-bit fonts
+
+\usepackage{lmodern} % Modern font
+
+\usepackage{xcolor} % Colors
+\usepackage{hyperref} % URLs
+\usepackage{graphicx} % Graphics
+
+\usepackage[parfill]{parskip} % Line skip paragraphs
+
+\usepackage{xifthen}
+\usepackage{bytefield}
+
+\usepackage{fancyhdr}
+\usepackage[raggedright]{titlesec}
+
+\title{Cellular Automata Research Platform\\Instruction Set Architecture}
+\date{\today}
+
+% Section styling
+\renewcommand\thepart{\arabic{part}}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\hspace{-1em}}
+\renewcommand\thesubsubsection{}
+
+\renewcommand{\familydefault}{\sfdefault} % Sans-seriff font
+\newcommand{\sectionbreak}{\clearpage} % Add pagebreak between sections
+
+% command definitions
+\input{defines/bytefield}
+\input{defines/instructions}
+
+\pagestyle{fancy}
+\lhead{}
+
+\pagenumbering{roman}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\section{Introduction}
+
+TODO
+
+\newpage
+
+\section{Instructions}
+
+TODO
+
+\end{document}

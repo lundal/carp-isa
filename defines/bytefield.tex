@@ -1,0 +1,85 @@
+\newcommand{\wordSSSI}[5]{
+    \begin{center}
+        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+            \bitheader{0-31} \\
+                \optionalbitbox{8}{#1}
+                \optionalbitbox{8}{#2}
+                \optionalbitbox{8}{#3}
+                \bitbox{3}{#4} % length
+                \bitbox{5}{#5} % opcode
+        \end{bytefield}
+    \end{center}
+}
+
+\newcommand{\wordDSI}[4]{
+    \begin{center}
+        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+            \bitheader{0-31} \\
+                \optionalbitbox{16}{#1}
+                \optionalbitbox{8}{#2}
+                \bitbox{3}{#3} % length
+                \bitbox{5}{#4} % opcode
+        \end{bytefield}
+    \end{center}
+}
+
+\newcommand{\wordTI}[3]{
+    \begin{center}
+        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+            \bitheader{0-31} \\
+                \optionalbitbox{24}{#1}
+                \bitbox{3}{#2} % length
+                \bitbox{5}{#3} % opcode
+        \end{bytefield}
+    \end{center}
+}
+
+\newcommand{\wordSSSS}[4]{
+    \begin{center}
+        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+            \bitheader{0-31} \\
+                \optionalbitbox{8}{#1}
+                \optionalbitbox{8}{#2}
+                \optionalbitbox{8}{#3}
+                \optionalbitbox{8}{#4}
+        \end{bytefield}
+    \end{center}
+}
+
+\newcommand{\wordDSS}[3]{
+    \begin{center}
+        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+            \bitheader{0-31} \\
+                \optionalbitbox{16}{#1}
+                \optionalbitbox{8}{#2}
+                \optionalbitbox{8}{#3}
+        \end{bytefield}
+    \end{center}
+}
+
+\newcommand{\wordDD}[2]{
+    \begin{center}
+        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+            \bitheader{0-31} \\
+                \optionalbitbox{16}{#1}
+                \optionalbitbox{16}{#2}
+        \end{bytefield}
+    \end{center}
+}
+
+\newcommand{\wordQ}[1]{
+    \begin{center}
+        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+            \bitheader{0-31} \\
+                \optionalbitbox{32}{#1}
+        \end{bytefield}
+    \end{center}
+}
+
+\newcommand{\optionalbitbox}[2]{
+    \ifthenelse{\equal{#2}{-}}
+        {\unusedbitbox{#1}}
+        {\bitbox{#1}{#2}}
+}
+
+\newcommand{\unusedbitbox}[1]{\bitbox{#1}{\color{lightgray}\rule{\width}{\height}}}
