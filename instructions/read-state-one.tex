@@ -1,0 +1,16 @@
+\instruction{Read One State}
+
+\wordSSSI{Z}{Y}{X}{0 0 0}{0 0 0 0 4}
+
+\format
+read\_state\_one(X, Y, Z)
+
+\purpose
+
+To retrieve the state of the cell at (Z, Y, X).
+
+\description
+
+The state of cell (Z, Y, X) is put into the send buffer.
+The send buffer is then word-aligned by padding with 0.
+Accessing cells outside the matrix dimensions yields undefined states.

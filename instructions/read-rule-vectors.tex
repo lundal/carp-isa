@@ -1,0 +1,28 @@
+\instruction{Read Rule Vectors}
+
+\wordDSI{N}{-}{0 0 0}{0 0 0 0 2}
+
+\format
+read\_rule\_vectors(N)
+
+\purpose
+
+To retrieve N rule vectors.
+
+\description
+
+N rule vectors are placed into the send buffer.
+Each consists of [rule amount] bits, where the first bit (rule zero) is always 1.
+The send buffer is word-aligned after each rule vector by padding with 0.
+
+\example
+
+Assume a system with [rule amount] set to 48, where rules 13 and 47 have triggered.
+read\_rule\_vectors(1) will put the following words into the send buffer.
+
+\wordSSSS{0 0 0 0 0 0 0 0}{0 0 0 0 0 0 0 0}{0 0 1 0 0 0 0 0}{0 0 0 0 0 0 0 1}
+\wordSSSS{0 0 0 0 0 0 0 0}{0 0 0 0 0 0 0 0}{1 0 0 0 0 0 0 0}{0 0 0 0 0 0 0 0}
+
+\notes
+
+This instruction takes N cycles.

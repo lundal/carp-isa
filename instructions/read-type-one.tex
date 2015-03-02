@@ -1,0 +1,16 @@
+\instruction{Read One Type}
+
+\wordSSSI{Z}{Y}{X}{0 0 0}{0 0 0 0 6}
+
+\format
+read\_type\_one(X, Y, Z)
+
+\purpose
+
+To retrieve the type of the cell at (Z, Y, X).
+
+\description
+
+The type of cell (Z, Y, X) is put into the send buffer.
+The send buffer is then word-aligned by padding with 0.
+Accessing cells outside the matrix dimensions yields undefined types.

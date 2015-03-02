@@ -1,0 +1,23 @@
+\instruction{Read Information}
+
+\wordTI{-}{0 0 0}{0 0 0 0 1}
+
+\format
+read\_information()
+
+\purpose
+
+To retrieve information about the system.
+
+\description
+
+The following words are put into the send buffer.
+
+\wordSSSS{matrix depth}{matrix height}{matrix width}{matrix wrap}
+\wordSSSS{counter bits}{counter amount}{type bits}{state bits}
+\wordQ{rule amount}
+\wordDSS{fitness parameters}{fitness words}{fitness id}
+
+\notes
+
+This instruction takes 4 cycles.

@@ -1,0 +1,20 @@
+\instruction{Read All States}
+
+\wordTI{-}{0 0 0}{0 0 0 0 5}
+
+\format
+read\_state\_all()
+
+\purpose
+
+To retrieve the state of all cells.
+
+\description
+
+The states of all cells are put into the send buffer in raster order (first X, then Y, then Z).
+The send buffer is word-aligned after each row by padding with 0.
+If a state would be split across two words, it is instead aligned to the next word.
+
+\notes
+
+This instruction takes [number of words] + 1 cycles.

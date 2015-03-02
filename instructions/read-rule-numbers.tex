@@ -1,0 +1,36 @@
+\instruction{Read Rule Numbers}
+
+\wordTI{-}{0 0 0}{0 0 0 0 3}
+
+\format
+read\_rule\_numbers()
+
+\purpose
+
+To retrieve the last rule that triggered for each cell during the previous development step.
+
+\description
+
+Rule numbers for the entire matrix is put into the send buffer.
+Each consists of $log_2$[rule amount] bits, sent in raster order (first X, then Y, then Z).
+A value of 0 means that no rules triggered.
+The send buffer is word-aligned after each row by padding with 0.
+If a rule number would be split across two words, it is instead aligned to the next word.
+
+\example
+
+Assume a system with [matrix depth] set to 1, [matrix height] set to 3, [matrix width] set to 3 and [rule amount] set to 256.
+If rule 2 triggered for the fist row, none for the second and rule 8 for the third,
+read\_rule\_numbers() will put the following words into the send buffer.
+
+\wordSSSS{0 0 0 0 0 0 0 0}{0 0 0 0 0 0 1 0}{0 0 0 0 0 0 1 0}{0 0 0 0 0 0 1 0}
+\wordSSSS{0 0 0 0 0 0 0 0}{0 0 0 0 0 0 0 0}{0 0 0 0 0 0 0 0}{0 0 0 0 0 0 0 0}
+\wordSSSS{0 0 0 0 0 0 0 0}{0 0 0 0 1 0 0 0}{1 0 0 0 1 0 0 0}{0 0 0 0 1 0 0 0}
+
+\notes
+
+This instruction takes [number of words] + 1 cycles.
+
+% $$ rule\_bits = \lceil log_2(rule\_amount) \rceil $$
+% $$ row\_words = min \left( matrix\_width, rule\_bits \right) $$
+% $$ words = matrix\_depth * matrix\_height * row\_words $$

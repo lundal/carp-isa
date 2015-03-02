@@ -1,0 +1,20 @@
+\instruction{Read All Types}
+
+\wordTI{-}{0 0 0}{0 0 0 0 7}
+
+\format
+read\_type\_all()
+
+\purpose
+
+To retrieve the types of all cells.
+
+\description
+
+The types of all cells are put into the send buffer in raster order (first X, then Y, then Z).
+The send buffer is word-aligned after each row by padding with 0.
+If a type would be split across two words, it is instead aligned to the next word.
+
+\notes
+
+This instruction takes [number of words] + 1 cycles.
