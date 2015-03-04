@@ -1,0 +1,19 @@
+\instruction{Reset Buffers}
+
+\wordTI{-}{0 0 0}{1 0 1 0 1}
+
+\format
+reset\_buffers()
+
+\purpose
+
+To clear the Rule Vector, Live Count and Fitness Buffers.
+
+\description
+
+The read and write pointers of the buffers are set to 0.
+This makes them appear empty.
+
+\notes
+
+If the Fitness unit is processing data, Live Count and Fitness Buffers may become undefined (TODO: FIX)

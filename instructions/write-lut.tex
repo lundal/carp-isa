@@ -1,0 +1,23 @@
+\instruction{Write LUT}
+
+\wordTI{-}{?}{0 1 0 0 0}
+\wordQ{TYPE}
+\wordQ{LUT}
+
+\format
+write\_lut(LUT, TYPE)
+
+\purpose
+
+To write a type to lookup table conversion entry.
+
+\description
+
+LUT is written to LUT BRAM at address TYPE.
+The length of LUT varies depending on [matrix depth].
+It is sent as one continuous piece spanning multiple words.
+The instruction length field is adjusted accordingly.
+
+\notes
+
+TYPE is cropped to [type bits].

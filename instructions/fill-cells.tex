@@ -1,0 +1,20 @@
+\instruction{Fill Cells}
+
+\wordDSI{TYPE}{STATE}{0 0 0}{0 1 0 1 0}
+
+\format
+fill\_cells(STATE, TYPE)
+
+\purpose
+
+To set the state and type of all cells.
+
+\description
+
+STATE and TYPE is written to each cell in Cell BRAM A.
+
+\notes
+
+STATE is cropped to [state bits].
+
+TYPE is cropped to [type bits].

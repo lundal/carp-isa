@@ -1,0 +1,31 @@
+\instruction{Write Row of Types}
+
+\wordSSSI{Z}{Y}{X}{?}{0 1 1 1 1}
+\wordQ{STATES}
+
+\format
+write\_state\_row(X, Y, Z, TYPES)
+
+\purpose
+
+To write one row (or as many can fit an instruction) of types.
+
+\description
+
+TYPES is a list of types in little-endian order.
+It is either [matrix width] or as many can fit 224 bits in length.
+Each type is [type bits] long.
+
+The types are written to Cell BRAM A at row (Z, Y).
+They are offset so the first type is written to position X within the row.
+Types offset to [matrix width] or more are discarded.
+
+The length of TYPES varies depending on [matrix width] and [type bits].
+It is sent as one continuous piece spanning multiple words.
+The instruction length field is adjusted accordingly.
+
+\notes
+
+Each coordinate is cropped to the bits in its matrix dimension.
+
+If row (Z, Y) is outside the defined matrix, data will still be written but only accessible by read instructions.

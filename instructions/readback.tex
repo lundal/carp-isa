@@ -1,0 +1,22 @@
+\instruction{Readback}
+
+\wordTI{-}{0 0 0}{1 0 0 1 1}
+
+\format
+
+devstep()
+
+\purpose
+
+To read back cell states from the sblock matrix.
+
+\description
+
+The states of all sblocks are written to Cell Buffer B.
+Types in Cell Buffer B are preserved.
+
+\notes
+
+The execution time for this instruction depends on [matrix depth] and [matrix height].
+
+$$ T = M_Z M_Y $$

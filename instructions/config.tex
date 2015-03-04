@@ -1,0 +1,23 @@
+\instruction{Configure}
+
+\wordTI{-}{0 0 0}{1 0 0 1 0}
+
+\format
+
+config()
+
+\purpose
+
+To configure the sblock matrix.
+
+\description
+
+The cells in Cell Buffer B are fetched along with the LUTs corresponding to each of their types.
+The LUTs and states are then written to the sblocks.
+
+\notes
+
+The execution time for this instruction depends on [matrix depth], [matrix height] and [lut configuration bits].
+
+$$ T_{3D} = M_Z M_Y \frac{ 128 }{ LUT_{CB} } + 2 $$
+$$ T_{2D} = M_Y \frac{ 32 }{ LUT_{CB} } + 2 $$

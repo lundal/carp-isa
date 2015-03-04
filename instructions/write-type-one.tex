@@ -1,0 +1,25 @@
+\instruction{Write One Type}
+
+\wordSSSI{Z}{Y}{X}{0 0 1}{0 1 1 0 1}
+\wordQ{TYPE}
+
+\format
+write\_type\_one(X, Y, Z, TYPE)
+
+\purpose
+
+To write one state.
+
+\description
+
+Type (Z, Y, X) in Cell BRAM A is set to TYPE.
+
+\notes
+
+Each coordinate is cropped to the bits in its matrix dimension.
+
+TYPE is cropped to [type bits].
+
+If row (Z, Y) is outside the defined matrix, data will still be written but only accessible by read instructions.
+
+If X is outside the defined matrix, nothing will happen.

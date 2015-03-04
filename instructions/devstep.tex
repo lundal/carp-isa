@@ -1,0 +1,29 @@
+\instruction{DevStep}
+
+\wordTI{-}{0 0 0}{1 0 0 0 0}
+
+\format
+
+devstep()
+
+\purpose
+
+To perform development on all cells.
+
+\description
+
+The cells in Cell Buffer A are fetched and tested against all active rules.
+If a rule matches a cell, the state and/or type of the cell is changed based on the rule.
+Rules of higher index override those of lower index.
+The developed cells are then stored in Cell Buffer B.
+
+The lastly matched rule of each cell is stored in Rule Number BRAM, and a list of all rules with a match is stored to the Rule Vector Buffer.
+
+\notes
+
+An overridden rule will be listed as having a match, but all its effects are discarded.
+
+The execution time for this instruction depends on [matrix depth], [matrix height], [rules active] and [rules tested in parallel].
+
+$$ T_{3D} = M_Z M_Y \frac{ R_A + 1 }{ R_{TIP} } + 6 $$
+$$ T_{2D} = M_Y \frac{ R_A + 1 }{ R_{TIP} } + 4 $$

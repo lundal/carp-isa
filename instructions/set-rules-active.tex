@@ -1,0 +1,21 @@
+\instruction{Set Active Rules}
+
+\wordDSI{N (low)}{-}{0 0 1}{0 1 0 1 0}
+\wordDD{-}{N (high)}
+
+\format
+set\_rules\_active(N)
+
+\purpose
+
+To set the number of rules that are currently active, so others can be skipped to reduce development time.
+
+\description
+
+Rules 1 to N is set to active (rule 0 is reserved).
+If N is 0, no rules will be set to active.
+
+\notes
+
+N is cropped to the number of bits in [rule amount].
+If this is 16 or less, the second word can be discarded (and instruction length field set to 0).

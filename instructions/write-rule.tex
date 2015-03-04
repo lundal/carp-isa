@@ -1,0 +1,23 @@
+\instruction{Write Rule}
+
+\wordTI{-}{?}{0 1 0 0 1}
+\wordQ{INDEX}
+\wordQ{RULE}
+
+\format
+write\_rule(RULE, INDEX)
+
+\purpose
+
+To write a development rule.
+
+\description
+
+RULE is written to Rule BRAM at address INDEX.
+The length of RULE varies depending on [matrix depth], [type bits] and [state bits].
+It is sent as one continuous piece spanning multiple words.
+The instruction length field is adjusted accordingly.
+
+\notes
+
+INDEX is cropped to the number of bits in [rule amount].

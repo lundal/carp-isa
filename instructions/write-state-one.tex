@@ -1,0 +1,25 @@
+\instruction{Write One State}
+
+\wordSSSI{Z}{Y}{X}{0 0 1}{0 1 1 0 1}
+\wordQ{STATE}
+
+\format
+write\_state\_one(X, Y, Z, STATE)
+
+\purpose
+
+To write one state.
+
+\description
+
+State (Z, Y, X) in Cell BRAM A is set to STATE.
+
+\notes
+
+Each coordinate is cropped to the bits in its matrix dimension.
+
+STATE is cropped to [state bits].
+
+If row (Z, Y) is outside the defined matrix, data will still be written but only accessible by read instructions.
+
+If X is outside the defined matrix, nothing will happen.
