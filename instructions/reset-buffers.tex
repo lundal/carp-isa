@@ -11,9 +11,11 @@ To clear the Rule Vector, Live Count and Fitness Buffers.
 
 \description
 
-The read and write pointers of the buffers are set to 0.
+The read and write pointers of the circular FIFO buffers are set to 0.
 This makes them appear empty.
 
 \notes
 
 If the Fitness unit is processing data, Live Count and Fitness Buffers may become undefined (TODO: FIX)
+
+If the Fitness buffer is full, this incruction should be called an additional time after any pending data from Fitness has been transfered.
