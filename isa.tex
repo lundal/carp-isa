@@ -53,6 +53,28 @@
 
 TODO
 
+This document...
+
+\newpage
+\subsection{Instructions}
+
+Each instruction is 256 bits and consists of a 5-bit operation code, a 3-bit length field and up to 248 bits of parameters.
+
+The operation code specifies what kind of instruction it is, and how the parameters should be parsed.
+
+The length field is used to improve communication speed by only transmitting the necessary parts of an instruction;
+It is zero-extended back to 256 bits by the fetch module.
+The field directly specifies the number of words after the first that are sent.
+
+The parameters are of different types and lengths for each instruction.
+Please see the individual instruction pages.
+
+\subsubsection*{Instruction Format}
+
+\wordTI{Parameters (low)}{Length}{OpCode}
+\wordQ{Parameters (higher)}
+$$...$$
+
 \newpage
 \subsection{Rules}
 
