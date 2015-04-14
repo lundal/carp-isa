@@ -85,7 +85,23 @@ Conditions for Z are ignored when [matrix depth] is 1.
 \newpage
 \subsection{LUTs}
 
-TODO
+The indexing for the look-up tables is (Z–,Z+,Y–,Y+,X–,X+,Self).
+For each of these indexes, the next cell state is spesified.
+The least significant index is written first (to the right).
+
+In the format below, [state bits] is assumed to be 1 since it is the only value currently supported.
+This allows the entries for (Y–,Y+,X–,X+,Self) to fit exactly within one word.
+
+\subsubsection*{LUT Format}
+
+\wordQ{(Y–,Y+,X–,X+,Self) when (Z–,Z+) is 00}
+\wordQ{(Y–,Y+,X–,X+,Self) when (Z–,Z+) is 01}
+\wordQ{(Y–,Y+,X–,X+,Self) when (Z–,Z+) is 10}
+\wordQ{(Y–,Y+,X–,X+,Self) when (Z–,Z+) is 11}
+
+\notes
+
+The Z parts are ignored when [matrix depth] is 1.
 
 \section{General Instructions}
 
