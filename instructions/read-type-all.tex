@@ -17,4 +17,6 @@ If a type would be split across two words, it is instead aligned to the next wor
 
 \notes
 
-This instruction takes [number of words] + 1 cycles.
+The execution time ($T$) for this instruction depends on [matrix depth] ($M_Z$), [matrix height] ($M_Y$), [matrix width] ($M_X$) and [type bits] ($B_T$).
+
+$$ T = M_Z M_Y \ceil[\bigg]{ \frac{M_X}{\max \left( \floor[\big]{ \frac{32}{B_T} }, M_X \right)} } + 1 $$

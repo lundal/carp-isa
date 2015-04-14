@@ -17,7 +17,7 @@ The LUTs and states are then written to the sblocks.
 
 \notes
 
-The execution time for this instruction depends on [matrix depth], [matrix height] and [lut configuration bits].
+The execution time ($T$) for this instruction depends on [matrix depth] ($M_Z$), [matrix height] ($M_Y$) and [lut configuration bits] ($LUT_{CB}$).
 
 $$ T_{3D} = M_Z M_Y \frac{ 128 }{ LUT_{CB} } + 2 $$
 $$ T_{2D} = M_Y \frac{ 32 }{ LUT_{CB} } + 2 $$

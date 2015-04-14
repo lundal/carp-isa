@@ -23,7 +23,7 @@ The lastly matched rule of each cell is stored in Rule Number BRAM, and a list o
 
 An overridden rule will be listed as having a match, but all its effects are discarded.
 
-The execution time for this instruction depends on [matrix depth], [matrix height], [rules active] and [rules tested in parallel].
+The execution time ($T$) for this instruction depends on [matrix depth] ($M_Z$), [matrix height] ($M_Y$), [rules active] ($R_A$) and [rules tested in parallel] ($R_{TIP}$).
 
 $$ T_{3D} = M_Z M_Y \max \left( \frac{ R_A + 1 }{ R_{TIP} }, 7 \right) + 6 $$
 $$ T_{2D} = M_Y \max \left( \frac{ R_A + 1 }{ R_{TIP} }, 5 \right) + 4 $$
