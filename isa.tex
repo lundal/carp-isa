@@ -53,9 +53,39 @@
 
 TODO
 
-Rule format
+\newpage
+\subsection{Rules}
 
-LUT format
+Rules consists of conditions for each cell in the neighborhood and a result that will be applied to the cell if the conditions match.
+
+Each condition contains a type, a state and a bit for each that marks if it should be checked.
+The result format is identical except for that the check bits are exchanged with change bits that mark which parts of the cell should change if all conditions match.
+
+In the formats below, [type bits] is assumed to be 5 and [states bits] 1 for the purpose of having everything nicely align to bytes.
+
+\subsubsection*{Rule Format}
+
+\wordSSSS{Condition X-}{Condition X+}{Condition Self}{Result}
+\wordSSSS{Condition Z-}{Condition Z+}{Condition Y-}{Condition Y+}
+
+\subsubsection*{Condition Format}
+
+\rulecondition{Type}{Check T}{State}{Check S}
+
+\subsubsection*{Result Format}
+
+\rulecondition{Type}{Change T}{State}{Change S}
+
+\notes
+
+For a rule to be counted as a hit, all conditions must match and at least one change bit must be set.
+
+Conditions for Z are ignored when [matrix depth] is 1.
+
+\newpage
+\subsection{LUTs}
+
+TODO
 
 \section{General Instructions}
 
