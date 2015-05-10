@@ -11,11 +11,11 @@ To begin storage of a program to internal memory.
 
 \description
 
-The fetch unit exits [read from communication] mode and enters [save to memory] mode.
+The Fetch module exits [read from communication] mode and enters [save to memory] mode.
 The next instruction will be saved at address ADDRESS, and then each address thereafter.
 
 \notes
 
-This will be saved as a nop if the fetch unit is already in [save to memory] mode.
+This will be saved as a nop if the Fetch module is already in [save to memory] mode.
 
 ADDRESS is cropped to [program counter bits].
