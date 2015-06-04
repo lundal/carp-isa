@@ -1,6 +1,6 @@
 \newcommand{\rulecondition}[4]{
     \begin{center}
-        \begin{bytefield}[bitwidth=4.4em,endianness=big]{8}
+        \begin{bytefield}[bitwidth=4.52em,endianness=big]{8}
             \bitheader{0-7} \\
                 \optionalbitbox{5}{#1}
                 \optionalbitbox{1}{#2}
@@ -11,7 +11,7 @@
 }
 \newcommand{\wordSSSI}[5]{
     \begin{center}
-        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+        \begin{bytefield}[bitwidth=1.13em,endianness=big]{32}
             \bitheader{0-31} \\
                 \optionalbitbox{8}{#1}
                 \optionalbitbox{8}{#2}
@@ -24,7 +24,7 @@
 
 \newcommand{\wordDSI}[4]{
     \begin{center}
-        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+        \begin{bytefield}[bitwidth=1.13em,endianness=big]{32}
             \bitheader{0-31} \\
                 \optionalbitbox{16}{#1}
                 \optionalbitbox{8}{#2}
@@ -36,7 +36,7 @@
 
 \newcommand{\wordTI}[3]{
     \begin{center}
-        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+        \begin{bytefield}[bitwidth=1.13em,endianness=big]{32}
             \bitheader{0-31} \\
                 \optionalbitbox{24}{#1}
                 \bitbox{3}{#2} % length
@@ -47,7 +47,7 @@
 
 \newcommand{\wordSSSS}[4]{
     \begin{center}
-        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+        \begin{bytefield}[bitwidth=1.13em,endianness=big]{32}
             \bitheader{0-31} \\
                 \optionalbitbox{8}{#1}
                 \optionalbitbox{8}{#2}
@@ -59,7 +59,7 @@
 
 \newcommand{\wordDSS}[3]{
     \begin{center}
-        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+        \begin{bytefield}[bitwidth=1.13em,endianness=big]{32}
             \bitheader{0-31} \\
                 \optionalbitbox{16}{#1}
                 \optionalbitbox{8}{#2}
@@ -70,7 +70,7 @@
 
 \newcommand{\wordDD}[2]{
     \begin{center}
-        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+        \begin{bytefield}[bitwidth=1.13em,endianness=big]{32}
             \bitheader{0-31} \\
                 \optionalbitbox{16}{#1}
                 \optionalbitbox{16}{#2}
@@ -80,7 +80,7 @@
 
 \newcommand{\wordQ}[1]{
     \begin{center}
-        \begin{bytefield}[bitwidth=1.1em,endianness=big]{32}
+        \begin{bytefield}[bitwidth=1.13em,endianness=big]{32}
             \bitheader{0-31} \\
                 \optionalbitbox{32}{#1}
         \end{bytefield}

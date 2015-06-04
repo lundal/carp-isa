@@ -1,4 +1,5 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper,twoside,12pt]{article}
+\usepackage[left=30mm,right=30mm,top=32mm,bottom=36mm]{geometry}
 
 \usepackage[utf8]{inputenc} % UTF-8
 \usepackage[T1]{fontenc} % 8-bit fonts
@@ -15,42 +16,42 @@
 \usepackage{bytefield}
 
 \usepackage{fancyhdr}
-\usepackage[raggedright]{titlesec}
 
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 
 \title{Cellular Automata Research Platform\\Instruction Set Architecture}
-\date{\today}
+\date{2015-06-14}
 
 % Section styling
-\renewcommand\thepart{\arabic{part}}
-\renewcommand\thesection{\arabic{section}}
-\renewcommand\thesubsection{\hspace{-1em}}
-\renewcommand\thesubsubsection{}
+\renewcommand{\thepart}{\arabic{part}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\hspace{-1em}}
 
 \renewcommand{\familydefault}{\sfdefault} % Sans-seriff font
-\newcommand{\sectionbreak}{\clearpage} % Add pagebreak between sections
 
 % command definitions
 \input{defines/bytefield}
 \input{defines/instructions}
 
-\pagestyle{fancy}
-\lhead{}
-
-\pagenumbering{roman}
+\fancyhf[HLE,HRO]{\leftmark}
+\fancyhf[HRE,HLO]{}
 
 \begin{document}
 
+\pagenumbering{gobble}
+
 \maketitle
+
+\cleardoublepage
+
+\pagestyle{fancy}
+\pagenumbering{roman}
 
 \tableofcontents
 
-\newpage
-
-\setcounter{page}{1}
+\cleardoublepage
 \pagenumbering{arabic}
 
 \section{Introduction}
@@ -63,7 +64,7 @@ However, keep in mind that multi-word instructions require multiple cycles to se
 
 When a bit vector is broken into multiple words, the least significant part is always listed first.
 
-\newpage
+\clearpage
 \subsection{Instructions}
 
 Each instruction is 256 bits and consists of a 5-bit operation code, a 3-bit length field and up to 248 bits of parameters.
@@ -83,7 +84,7 @@ Please see the individual instruction pages.
 \wordQ{Parameters (higher)}
 $$...$$
 
-\newpage
+\clearpage
 \subsection{Rules}
 
 Rules consists of conditions for each cell in the neighborhood and a result that will be applied to the cell if the conditions match.
@@ -112,7 +113,7 @@ For a rule to be counted as a hit, all conditions must match and at least one ch
 
 Conditions for Z are ignored when [matrix depth] is 1.
 
-\newpage
+\clearpage
 \subsection{LUTs}
 
 The indexing for the look-up tables is (Z–,Z+,Y–,Y+,X–,X+,Self).
@@ -133,6 +134,7 @@ This allows the entries for (Y–,Y+,X–,X+,Self) to fit exactly within one wor
 
 The Z parts are ignored when [matrix depth] is 1.
 
+\cleardoublepage
 \section{General Instructions}
 
 This section covers instructions that are not used directly or do not fit into any of the following sections.
@@ -145,6 +147,7 @@ This section covers instructions that are not used directly or do not fit into a
 \input{instructions/swap-cell-storage}
 \input{instructions/reset-buffers}
 
+\cleardoublepage
 \section{Development Instructions}
 
 This section covers all instructions affecting the development module.
@@ -158,6 +161,7 @@ This includes writing rules, setting active rules, running development and readi
 
 \input{instructions/develop}
 
+\cleardoublepage
 \section{Cell Storage Instructions}
 
 This section covers all instructions for writing and reading states and types to/from the cell storage.
@@ -174,6 +178,7 @@ This section covers all instructions for writing and reading states and types to
 
 \input{instructions/fill-cells}
 
+\cleardoublepage
 \section{Cellular Automaton Instructions}
 
 This section covers all instructions affecting the Cellular Automaton.
@@ -186,6 +191,7 @@ This includes writing look-up tables, configuring the CA, running the CA, and re
 
 \input{instructions/step}
 
+\cleardoublepage
 \section{Control Flow Instructions}
 
 This section covers all instructions that are related to the program memory.
