@@ -55,7 +55,7 @@
 
 \section{Introduction}
 
-This document is a complete spesification of the instruction set for the Cellular Automata Research Platform.
+This document is a complete specification of the instruction set for the Cellular Automata Research Platform.
 It documents all effects and possible side effects of every instruction.
 
 Unless otherwise stated, an instruction completes in one cycle.
@@ -116,7 +116,7 @@ Conditions for Z are ignored when [matrix depth] is 1.
 \subsection{LUTs}
 
 The indexing for the look-up tables is (Z–,Z+,Y–,Y+,X–,X+,Self).
-For each of these indexes, the next cell state is spesified.
+For each of these indexes, the next cell state is specified.
 The least significant index is written first (to the right).
 
 In the format below, [state bits] is assumed to be 1 since it is the only value currently supported.
@@ -156,7 +156,7 @@ This includes writing rules, setting active rules, running development and readi
 \input{instructions/write-rule}
 \input{instructions/set-rules-active}
 
-\input{instructions/devstep}
+\input{instructions/develop}
 
 \section{Cell Storage Instructions}
 
@@ -174,7 +174,7 @@ This section covers all instructions for writing and reading states and types to
 
 \input{instructions/fill-cells}
 
-\section{Cellular Automata Instructions}
+\section{Cellular Automaton Instructions}
 
 This section covers all instructions affecting the Cellular Automaton.
 This includes writing look-up tables, configuring the CA, running the CA, and reading back the new states.
@@ -184,7 +184,7 @@ This includes writing look-up tables, configuring the CA, running the CA, and re
 \input{instructions/config}
 \input{instructions/readback}
 
-\input{instructions/runstep}
+\input{instructions/step}
 
 \section{Control Flow Instructions}
 
